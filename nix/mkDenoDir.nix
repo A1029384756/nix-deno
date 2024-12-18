@@ -121,7 +121,7 @@ let
             "npm/${npmRegistryUrlSlug}/${pkgName}/registry/${version}.json" = writeText "${drvName}-registry.json" registryData;
           }
       )
-      (if denoLock.version == 3 then denoLock.packages.npm or { } else if denoLock.version == 4 then denoLock.npm or { } else throw "unsupported lockfile version")
+      (if denoLock.version == "3" then denoLock.packages.npm or { } else if denoLock.version == "4" then denoLock.npm or { } else throw "unsupported lockfile version")
   );
 in
 symlinkJoin {
