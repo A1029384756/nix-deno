@@ -18,7 +18,7 @@ stdenv.mkDerivation ({
   # setting the prefetch direcory for the cache restore hook
   env =
     {
-      DENO_DIR = denoPlatform.mkDenoDir { inherit lockFile npmRegistryUrl; };
+      DENO_PREFETCH_DIR = denoPlatform.mkDenoDir { inherit lockFile npmRegistryUrl; };
       NPM_CONFIG_REGISTRY = npmRegistryUrl;
     }
     // args.env or { };
